@@ -1,3 +1,14 @@
+import logging
+import mist
+import portia/http_server/router
+
 pub fn supervised() {
-  todo
+  logging.configure()
+  logging.set_level(logging.Debug)
+
+  router.routes()
+  |> mist.new()
+  |> mist.bind("localhost")
+  |> mist.port(4000)
+  |> mist.supervised()
 }
