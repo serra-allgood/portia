@@ -9,6 +9,6 @@ pub fn supervised() {
   router.routes()
   |> mist.new()
   |> mist.bind("localhost")
-  |> mist.port(4000)
+  |> mist.port(8080)
   |> mist.supervised()
 }
