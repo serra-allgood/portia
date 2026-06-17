@@ -24,8 +24,6 @@ pub fn routes() {
       }
     }
     case req.method, request.path_segments(req) {
-      http.Post, ["echo"] -> handlers.echo_handler(req)
-      http.Get, ["ping"] -> handlers.ping_handler(req)
       http.Post, ["replicant-hook"] -> handlers.replicant_hook_handler(req)
 
       _, _ -> not_found
